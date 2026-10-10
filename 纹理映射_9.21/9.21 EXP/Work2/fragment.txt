@@ -1,0 +1,23 @@
+#version 330 core
+
+in vec2 TexCoord;
+out vec4 FragColor;
+
+uniform sampler2D texture1;
+
+/*
+uniform
+可以理解为在C++里控制着色器的一个设置项，在这里定义表示先占个位置，等后边C++告诉我
+这里相当于是我要用一张纹理，具体用哪个插槽里的，等 C++ 告诉我
+*/
+
+void main()
+{
+    FragColor = texture(texture1, TexCoord);
+
+    /*
+    根据纹理坐标，从指定纹理里取得颜色值
+    texture1 是纹理采样器，在源代码中我让其读取单元0，即木箱
+    TextCoord 从哪个位置，对应行2里读取位置参数，从顶点着色器里读进来的
+    */
+}

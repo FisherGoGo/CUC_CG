@@ -1,0 +1,54 @@
+# Visual Studio settings and generated build files
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+ipch/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.obj
+*.pch
+*.ipch
+*.pdb
+*.ilk
+*.idb
+*.tlog
+*.lastbuildstate
+*.log
+*.exe
+*.dll
+*.lib
+*.exp
+
+# Keep bundled GLFW libraries required by the projects
+!/opengl/**/*.dll
+!/opengl/**/*.lib
+
+# Duplicate archives; extracted sources and dependencies are tracked
+*.zip
+*.rar
+*.7z
+
+# Temporary report renders; keep the formatting scripts
+/实验报告/
+*.doc
+*.docx
+/工作文件/报告排版/page-*.png
+/工作文件/报告排版/formatted.pdf
+~$*
+*.tmp
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+Desktop.ini

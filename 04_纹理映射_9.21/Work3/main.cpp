@@ -90,7 +90,7 @@ int main()
     //这里是因为默认读入将图片最上边一行放在了最下面一行，所以先反转
 
     int width, height, nrChannels;
-    unsigned char* data = stbi_load("../../container.jpg", &width, &height, &nrChannels, 3);
+    unsigned char* data = stbi_load("../container.jpg", &width, &height, &nrChannels, 3);
 
     unsigned int texture;
     glGenTextures(1, &texture);
@@ -116,7 +116,7 @@ int main()
 
     // 现在多一个读笑脸
 
-	data = stbi_load("../../awesomeface.png", &width, &height, &nrChannels, 4);
+	data = stbi_load("../awesomeface.png", &width, &height, &nrChannels, 4);
 
 	unsigned int texture2;
     glGenTextures(1, &texture2);

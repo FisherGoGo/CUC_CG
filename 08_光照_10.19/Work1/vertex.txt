@@ -1,0 +1,23 @@
+#version 330 core
+
+layout(location = 0) in vec3 aPos;//位置
+layout(location = 1) in vec2 aTexCoord;//材质
+layout(location = 2) in vec3 aNormal;//法线
+
+out vec2 TexCoord;
+out vec3 FragPos;
+out vec3 Normal;
+
+uniform mat4 model; //模型矩阵
+uniform mat4 cameraMatrix; // projection * view
+
+void main()
+{
+	vec4 worldPos = model * vec4(aPos, 1.0);
+	FragPos = worldPos.xyz; // 得到世界坐标，用于获取光照向量
+
+	Normal = mat3(transpose(inverse(model))) * aNormal; //法线矩阵
+
+	gl_Position = cameraMatrix * worldPos;
+	TexCoord = aTexCoord;
+}
